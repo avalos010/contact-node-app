@@ -1,0 +1,20 @@
+{{#each errors}}
+  <div class="alert alert-danger">
+    {{text}}
+  </div>
+  {{else}}
+
+{{/each}}
+<h3>Edit Contact</h3>
+<form method="post" action="/contacts/{{contact.id}}?_method=PUT">
+<input type="hidden" name="_method" value="PUT">
+  <div class="form-control m-2">
+  <label for="name">Name:</label>
+  <input class="form-control" type="text" name="name" id="name" required value="{{contact.name}}">
+  <label for="number">Number:</label>
+  <input class="form-control" type="number" name="number" id="number" required value="{{contact.number}}">
+  <label for="email">Email:</label>
+  <input class="form-control" type="email" name="email" id="email">
+  <input type="submit" value="Save" class="btn btn-dark btn-block mt-3"/>
+</div>
+</form>

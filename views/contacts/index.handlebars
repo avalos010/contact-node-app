@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+{{#each contacts}}
+  <div class="card card-body mb-2">
+    <h4>Name: {{name}}</h4>
+    <p>Phome Number: {{number}}</p>
+    {{#if contacts.email}}
+      <p>{{email}}</p>
+    {{/if}}
+  <a class="btn btn-dark btn-block mb-2" href="/contacts/edit/{{id}}">Edit</a>
+    <form action="/contacts/{{id}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="Delete">
+    </form>
+
+  </div>
+
+  {{else}}
+    <p>No Contacts Listed</p>
+{{/each}}

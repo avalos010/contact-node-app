@@ -1,0 +1,17 @@
+{{#each errors}}
+  <div class="alert alert-danger">
+    {{text}}
+  </div>
+  {{else}}
+
+{{/each}}
+<h3>Add Contact</h3>
+<form method="post" action="/contacts">
+  <div class="form-control m-2">
+    <label for="name">Name:</label>
+    <input class="form-control" type="text" name="name" id="name" required>
+    <label for="number">Number:</label>
+    <input class="form-control" type="number" name="number" id="number" required>
+    <input type="submit" value="Add" class="btn btn-dark btn-block mt-3" />
+  </div>
+</form>
