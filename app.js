@@ -80,5 +80,5 @@ mongoose.connect(`mongodb://${secret.dbname}:${secret.dbpassword}@ds123500.mlab.
 app.use('/contacts', contacts);
 app.use('/user', users);
 
-const port = 5000;
+const port = process.PORT.env||5000;
 app.listen(port, () => console.log(`listening on port ${port}`));
