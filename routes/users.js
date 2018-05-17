@@ -31,7 +31,7 @@ router.get('/register',(req, res) => {
 //sign up post route
 router.post('/register',(req, res) => {
   let errors = [];
-  const email = req.body.email;
+  const email = req.body.email.toLowerCase();
   if(req.body.password != req.body.password2) {
     errors.push({
       text: 'Passwords do not match'
