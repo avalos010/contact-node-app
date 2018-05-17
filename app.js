@@ -58,7 +58,7 @@ app.use((req,res,next) => {
   next();
 });
 
-mongoose.connect(`mongodb://luiz010:durango@ds123500.mlab.com:23500/contacts-node`)
+mongoose.connect(`mongodb://luiz010:password@ds123500.mlab.com:23500/contacts-node`)
   .then(() => console.log('mongodb Connected!'))
   .catch(err => console.log(err));
 
