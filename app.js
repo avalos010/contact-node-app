@@ -7,7 +7,7 @@ const path = require('path');
 const flash = require('connect-flash');
 const passport = require('passport');
 const session = require('express-session');
-const secret = require('./secret/secret');
+// const secret = require('./secret/secret');
 const app = express();
 
 //load routes
@@ -58,7 +58,7 @@ app.use((req,res,next) => {
   next();
 });
 
-mongoose.connect(`mongodb://${secret.dbname}:${secret.dbpassword}@ds123500.mlab.com:23500/contacts-node`)
+mongoose.connect(`mongodb://luiz010:durango@ds123500.mlab.com:23500/contacts-node`)
   .then(() => console.log('mongodb Connected!'))
   .catch(err => console.log(err));
 
